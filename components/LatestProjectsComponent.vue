@@ -1,0 +1,262 @@
+<template>
+  <section class="projects-section py-5">
+    <div class="container">
+      <!-- Section Title -->
+    <!-- <div class="row projects">
+        <div class="col-12 col-md-12">
+          <h1 class="section-title">Projects</h1>
+        </div>
+    </div>
+
+    <div class="row projects">
+        <div class="col-12 col-md-12 d-flex align-items-center justify-content-center">
+          <p class="section-subtitle">
+            The Best Projects<br />
+            <span>Kind customers - The best Outcome</span>
+          </p>
+        </div>
+    </div> -->
+
+      <!-- Projects Grid -->
+      <div class="row gy-4">
+        <!-- Project 1 -->
+        <div class="col-12 col-md-4">
+          <div
+            class="project-card nostalgie"
+          >
+            <div class="project-info">
+              <h4 class="project-title">Nostalgie - Restaurant, Café</h4>
+              <p class="project-description">
+                Completely new website design for well-known restaurant in
+                eastern Slovakia.
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="../assets/projects/nostalgie-mockup.png"
+                alt="Nostalgie Mockup"
+                class="project-image"
+              />
+            </div>
+            <div class="project-view-container">
+              <a href="#" class="project-view">
+                VIEW
+                <div class="arrow-circle">
+                  <span class="arrow-icon">➜</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-12 col-md-4">
+          <div
+            class="project-card sez"
+          >
+            <div class="project-info">
+              <h4 class="project-title">SEZ Plaset</h4>
+              <p class="project-description">
+                Website design and web development for company focused on
+                plastic manufacturing.
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="../assets/projects/sez-plaset-mockup.png"
+                alt="SEZ Plaset Mockup"
+                class="project-image"
+              />
+            </div>
+            <div class="project-view-container">
+              <a href="#" class="project-view">
+                VIEW
+                <div class="arrow-circle">
+                  <span class="arrow-icon">➜</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-12 col-md-4">
+          <div
+            class="project-card techhub"
+          >
+            <div class="project-info">
+              <h4 class="project-title">TechHub South</h4>
+              <p class="project-description">
+                Rebranding for startup company TechHub South, to bring the best
+                possible branding ideas.
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="../assets/projects/techhubsouth-mockup.png"
+                alt="TechHub South Mockup"
+                class="project-image"
+              />
+            </div>
+            <div class="project-view-container">
+              <a href="#" class="project-view">
+                VIEW
+                <div class="arrow-circle">
+                  <span class="arrow-icon">➜</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'LatestProjectsComponent',
+}
+</script>
+
+<style scoped>
+/* Section Background */
+.projects-section {
+  background-color: #000;
+  color: #fff;
+  padding: 0px 0;
+}
+
+/* Project Cards */
+.project-card {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+}
+
+/* Project Info */
+.project-info {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fff;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-image {
+  width: auto;
+  height: 100%;
+  object-fit: contain; /* Ensures full visibility of the image */
+}
+
+.nostalgie{
+    background-color: #90323D;
+}
+.nostalgie .project-view-container{
+    background-color: #6F222B;
+}
+.nostalgie:hover {
+  border: 1px solid #6F222B;
+  box-shadow: 0 0 15px #90323D; 
+}
+
+.sez{
+    background-color: #A59132;
+}
+.sez .project-view-container{
+    background-color: #897517;
+}
+.sez:hover {
+  border: 1px solid #897517;
+  box-shadow: 0 0 15px #A59132; 
+}
+
+.techhub{
+    background-color: #56638A;
+}
+.techhub .project-view-container{
+    background-color: #313D62;
+}
+.techhub:hover {
+  border: 1px solid #313D62;
+  box-shadow: 0 0 15px #56638A; 
+}
+
+/* View Link */
+.project-view-container {
+    display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.project-view {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #baff44;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+.project-view-container:hover .arrow-circle {
+  transform: translateX(10px);
+}
+
+.arrow-circle {
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon {
+  color: #baff44;
+  font-weight: bold;
+}
+
+</style>
