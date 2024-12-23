@@ -2,7 +2,7 @@
   <section class="about-services py-5">
     <div class="container">
       <!-- UX/UI Design Section -->
-      <div class="row align-items-center service-card">
+      <div id="uxuidesign" class="row align-items-center service-card">
         <!-- Image Section -->
         <div class="col-lg-4 col-md-4 col-sm-12 text-center">
           <div class="service-icon">
@@ -31,7 +31,7 @@
       </div>
 
       <!-- Web Development Section -->
-      <div class="row align-items-center service-card mt-5">
+      <div id="webdev" class="row align-items-center service-card mt-5">
         <!-- Text Section -->
         <div class="col-lg-8 col-md-8 col-sm-12 order-lg-1 order-2">
           <div class="service-content">
@@ -60,7 +60,7 @@
       </div>
 
       <!-- Branding Section -->
-      <div class="row align-items-center service-card mt-5">
+      <div id="branding" class="row align-items-center service-card mt-5">
         <!-- Image Section -->
         <div class="col-lg-4 col-md-4 col-sm-12 text-center">
           <div class="service-icon">
@@ -88,7 +88,7 @@
       </div>
 
       <!-- SEO Section -->
-      <div class="row align-items-center service-card mt-5">
+      <div id="seo" class="row align-items-center service-card mt-5">
         <!-- Text Section -->
         <div class="col-lg-8 col-md-8 col-sm-12 order-lg-1 order-2">
           <div class="service-content">
@@ -116,7 +116,7 @@
       </div>
 
       <!-- Social Media Marketing Section -->
-      <div class="row align-items-center service-card mt-5">
+      <div id="some" class="row align-items-center service-card mt-5">
         <!-- Image Section -->
         <div class="col-lg-4 col-md-4 col-sm-12 text-center">
           <div class="service-icon">
@@ -144,7 +144,7 @@
       </div>
 
       <!-- Photography and Videography Section -->
-      <div class="row align-items-center service-card mt-5">
+      <div id="photo" class="row align-items-center service-card mt-5">
         <!-- Text Section -->
         <div class="col-lg-8 col-md-8 col-sm-12 order-lg-1 order-2">
           <div class="service-content">
@@ -170,6 +170,19 @@
           </div>
         </div>
       </div>
+
+      <div class="row align-items-center mt-5">
+        <div class="col-12 col-md-12 d-flex justify-content-center align-items-center">
+
+          <a href="#" class="btn getintouch">
+            Get in touch with us
+              <div class="arrow-circle">
+                    <span class="arrow-icon">➜</span>
+              </div>
+          </a>
+
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -177,8 +190,29 @@
 <script>
 export default {
   name: 'AboutServicesComponent',
-}
+  mounted() {
+    // Check if there's a hash in the URL
+    if (this.$route.hash) {
+      const element = document.querySelector(this.$route.hash);
+      if (element) {
+        // Get the top position of the element and subtract 200px
+        const offsetTop = element.getBoundingClientRect().top + window.scrollY - 200;
+        // Scroll to the element smoothly
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+      if (!element) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+    }
+    if (!this.$route.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+  },
+};
 </script>
+
 
 <style scoped>
 .about-services {
@@ -236,6 +270,55 @@ export default {
   font-size: 1rem;
   line-height: 1.6;
   color: #fff;
+}
+
+
+.getintouch {
+  width: fit-content!important;
+  background-color: #baff44;
+  border: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+  margin-bottom: 4rem;
+}
+.getintouch:hover{
+  background-color: #5D8022;
+}
+.getintouch:hover .arrow-icon{
+  color: #5D8022;
+}
+.getintouch:hover{
+  color: #fff;
+}
+.getintouch:hover .arrow-circle {
+  transform: translateX(10px);
+  background-color: #fff;
+}
+
+
+.arrow-circle {
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon {
+  color: #baff44;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
