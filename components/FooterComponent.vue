@@ -7,8 +7,8 @@
     <div class="container">
       <div class="row align-items-center text-white py-5">
         <!-- Left Column: Contact Information -->
-        <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
-          <div class="contact-info">
+        <div class="col-md-4 text-center text-md-start mb-4 mb-md-0 contactinfo">
+          <div class="contact-infos">
             <!-- Email -->
             <div class="d-flex align-items-center mb-2 contact-info">
                 <i class="fa-regular fa-envelope"></i>
@@ -25,7 +25,7 @@
         </div>
 
         <!-- Center Column: Social Media -->
-        <div class="col-md-4 text-center mb-4 mb-md-0">
+        <div class="col-md-4 text-center mb-4 mb-md-0 some">
           <div class="social-icons d-flex justify-content-center">
             <a href="#" class="social-link">
               <i class="fab fa-facebook-f"></i>
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Right Column: Policy Links and Logo -->
-        <div class="col-md-4 text-center text-md-end right-side">
+        <div class="col-md-4 text-center text-md-end right-side policies">
           <ul class="policy-links list-unstyled mb-2">
             <li>
               <a href="#" class="policy-link">Privacy policy</a>
@@ -180,5 +180,59 @@ export default {
   font-size: 0.9rem;
   color: #fff;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  .contactinfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+  }
+
+  .some{
+    order: 3;
+    margin-bottom: 0px!important;
+    margin-top: 15px;
+  }
+
+  .policies{
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .policy-links{
+    order: 2;
+  }
+
+  .footer-logo{
+    order: 1;
+    margin: 0;
+  }
+
+  .footer-logo img.logo{
+    margin: 0px!important;
+    padding: 0px!important;
+  }
+
+  .contact-infos{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .policy-links{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+
 }
 </style>
