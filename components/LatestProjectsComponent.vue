@@ -1,21 +1,6 @@
 <template>
   <section class="projects-section py-5">
     <div class="container">
-      <!-- Section Title -->
-    <!-- <div class="row projects">
-        <div class="col-12 col-md-12">
-          <h1 class="section-title">Projects</h1>
-        </div>
-    </div>
-
-    <div class="row projects">
-        <div class="col-12 col-md-12 d-flex align-items-center justify-content-center">
-          <p class="section-subtitle">
-            The Best Projects<br />
-            <span>Kind customers - The best Outcome</span>
-          </p>
-        </div>
-    </div> -->
 
       <!-- Projects Grid -->
       <div class="row gy-4">
@@ -39,7 +24,7 @@
               />
             </div>
             <div class="project-view-container">
-              <a href="#" class="project-view">
+              <a href="/nostalgie" class="project-view">
                 VIEW
                 <div class="arrow-circle">
                   <span class="arrow-icon">➜</span>
@@ -69,7 +54,7 @@
               />
             </div>
             <div class="project-view-container">
-              <a href="#" class="project-view">
+              <a href="/sezplaset" class="project-view">
                 VIEW
                 <div class="arrow-circle">
                   <span class="arrow-icon">➜</span>
@@ -99,7 +84,7 @@
               />
             </div>
             <div class="project-view-container">
-              <a href="#" class="project-view">
+              <a href="/techhubsouth" class="project-view">
                 VIEW
                 <div class="arrow-circle">
                   <span class="arrow-icon">➜</span>
