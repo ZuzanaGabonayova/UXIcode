@@ -80,7 +80,7 @@
                   <p class="testimonial">
                     “UxiCode takes care of our whole digital presence,
                     whether it is our website or social media. 
-                    I have also experinced their photoshooting services on our events.
+                    I have also experienced their photoshooting services on our events.
                     I am really satisfied with outcomes.”
                   </p>
                   <div class="client-info d-flex align-items-center">
@@ -105,12 +105,27 @@
           </div>
 
           <!-- Custom Line Indicators -->
-          <div
-            class="carousel-line-indicators position-absolute carousel-indicators"
-          >
-            <div class="line-indicator active"></div>
-            <div class="line-indicator"></div>
-            <div class="line-indicator"></div>
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#clientsCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#clientsCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#clientsCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
           </div>
         </div>
       </div>
@@ -120,19 +135,8 @@
 
 <script>
 export default {
-  name: 'ClientsComponent',
-  mounted() {
-    const carousel = document.getElementById('clientsCarousel')
-    carousel.addEventListener('slid.bs.carousel', (event) => {
-      const indicators = document.querySelectorAll(
-        '.carousel-line-indicators .line-indicator'
-      )
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === event.to)
-      })
-    })
-  },
-}
+  name: "ClientsComponent",
+};
 </script>
 
 <style scoped>
@@ -144,8 +148,8 @@ export default {
   text-align: center;
 }
 
-.clients-section p{
-    font-family: 'Newsreader', serif;
+.clients-section p {
+  font-family: "Newsreader", serif;
 }
 
 /* Carousel Container Styling */
@@ -227,23 +231,24 @@ export default {
 }
 
 /* Custom Line Indicators */
-.carousel-line-indicators {
-  bottom: 20px;
-  left: 0;
-  right: 0;
+.carousel-indicators {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  align-items: center;
+  gap: 10px;
+  bottom: 20px;
 }
 
-.line-indicator {
+.carousel-indicators button {
   width: 50px;
   height: 4px;
   background-color: #5d8022;
+  border: none;
+  border-radius: 2px;
   transition: background-color 0.3s ease;
 }
 
-.line-indicator.active {
+.carousel-indicators .active {
   background-color: #baff44;
 }
 
@@ -260,6 +265,11 @@ export default {
 
   .client-logo {
     height: 60px;
+  }
+
+  .carousel-indicators button {
+    width: 30px;
+    height: 3px;
   }
 }
 </style>
