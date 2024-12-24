@@ -147,7 +147,6 @@ export default {
 /* Carousel Controls */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #baff44;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -180,20 +179,23 @@ export default {
 /* Responsiveness */
 @media (max-width: 768px) {
   .carousel-inner {
-    height: 60vh;
+    height: 25vh;
   }
 
   .carousel-image {
-    max-height: 50vh;
-  }
-
-  .gallery-title {
-    font-size: 2rem;
+    max-height: 20vh;
   }
 
   .carousel-indicators button {
-    width: 30px;
+    width: 20px;
     height: 3px;
+  }
+
+  /* Carousel Controls */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>

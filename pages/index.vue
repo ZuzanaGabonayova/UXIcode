@@ -62,7 +62,7 @@
         class="col-12 col-md-12 d-flex align-items-center justify-content-center"
       >
         <!-- CTA Button -->
-        <a href="#" class="btn see-more-btn">
+        <a href="/projects" class="btn see-more-btn">
           See more projects
           <div class="arrow-circle">
             <span class="arrow-icon">➜</span>
@@ -323,9 +323,13 @@ export default {
     margin-top: 1rem;
     font-size: 1.5rem;
   }
-  
+
   .clients h1 {
     font-size: 5rem;
+  }
+
+  .see-more-btn{
+    margin-bottom: 2rem!important;
   }
 }
 </style>

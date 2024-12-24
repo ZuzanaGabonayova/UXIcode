@@ -105,7 +105,7 @@ export default {
 
   .logo-slide {
     width: 125px;
-    height: 50px;
+    height: 90px;
   }
 
   .section-title {

@@ -2,8 +2,8 @@
   <section class="about-us py-5">
     <div class="container">
       <!-- Who Are We Section -->
-      <div class="row align-items-center mb-5">
-        <div class="col-lg-6 col-md-12">
+      <div class="row align-items-center mb-5 whoarewe">
+        <div class="col-lg-6 col-md-12 whoarewe-text">
           <h1 class="section-title">Who are we?</h1>
           <p class="section-text">
             At our company, we are passionate about delivering top-notch IT and
@@ -26,7 +26,7 @@
             world.
           </p>
         </div>
-        <div class="col-lg-6 col-md-12 text-center">
+        <div class="col-lg-6 col-md-12 text-center whoarewe-img">
           <img
             src="../assets/aboutus/office.jpg"
             alt="Office Image"
@@ -81,7 +81,7 @@
         </div>
         <!-- Values -->
         <div
-          class="col-lg-4 col-md-12 d-flex flex-column align-items-center mb-4"
+          class="col-lg-4 col-md-12 d-flex flex-column align-items-center mb-4 values"
         >
           <div
             class="icon-box d-flex justify-content-center align-items-center"
@@ -110,7 +110,7 @@
           <h1 class="team-title">Our team</h1>
         </div>
         <!-- Team Member 1 -->
-        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-end">
+        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-end zuzana-div">
           <div class="team-member zuzana">
             <a href="https://www.linkedin.com/in/zuzanagabonayova/">
                 <img
@@ -126,7 +126,7 @@
           </div>
         </div>
         <!-- Team Member 2 -->
-        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-start">
+        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-start katarina-div">
           <div class="team-member katarina">
             <a href="https://www.linkedin.com/in/katarinahudakova/">
             <img
@@ -187,13 +187,13 @@ export default {
 }
 
 .mission-vision-values .icon-box {
-  height: 150px; /* Ensure equal height for icons */
+  height: 150px; 
   display: flex;
   align-items: center;
 }
 
 .mission-vision-values .icon {
-  width: 120px; /* Larger size for better visibility */
+  width: 120px; 
   height: auto;
 }
 
@@ -273,5 +273,43 @@ export default {
 }
 .team-member a{
     text-decoration: none;
+}
+
+@media (max-width: 768px){
+  .whoarewe{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .whoarewe .whoarewe-text, 
+  .whoarewe .whoarewe-img{
+    width: 90%;
+  }
+
+  .whoarewe .whoarewe-text h1{
+    text-align: center;
+  }
+
+  .mission,
+  .vision,
+  .values{
+    width: 90%;
+    border-right: 0px;
+    padding: 0;
+  }
+  
+  .mission-vision-values .icon-box{
+    height: 120px;
+  }
+
+  .zuzana,
+  .katarina{
+    margin: 1rem!important;
+  }
+
+  .zuzana-div,
+  .katarina-div{
+    align-items: center!important;;
+  }
 }
 </style>

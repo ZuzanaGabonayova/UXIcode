@@ -28,4 +28,8 @@ export default {
   font-family: 'K2D', sans-serif;
 }
 
+body{
+  background-color: #000;
+}
+
 </style>

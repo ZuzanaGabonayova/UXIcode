@@ -5,7 +5,7 @@
       <!-- Projects Grid -->
       <div class="row gy-4">
         <!-- Project 1 -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 project-layout">
           <div
             class="project-card nostalgie"
           >
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 project-layout">
           <div
             class="project-card sez"
           >
@@ -65,7 +65,7 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 project-layout">
           <div
             class="project-card techhub"
           >
@@ -114,14 +114,8 @@ export default {
 }
 
 /* Project Cards */
-.project-card {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+.project-card { 
   border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   display: flex;
@@ -244,4 +238,21 @@ export default {
   font-weight: bold;
 }
 
+@media (max-width: 768px){
+  .project-card{
+    width: 90%;
+    height: 400px;
+  }
+
+  .project-layout{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .projects-section{
+    padding-bottom: 2rem!important;
+    padding-top: 2rem!important;
+  }
+}
 </style>

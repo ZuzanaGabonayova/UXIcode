@@ -1,6 +1,6 @@
 <template>
   <section class="about-services py-5">
-    <div class="container">
+    <div class="container services-container">
       <!-- UX/UI Design Section -->
       <div id="uxuidesign" class="row align-items-center service-card">
         <!-- Image Section -->
@@ -330,6 +330,8 @@ export default {
 
   .service-icon {
     margin-bottom: 1rem;
+    width: 180px;
+    height: 180px;
   }
 
   .service-content {
@@ -342,6 +344,22 @@ export default {
 
   .service-description {
     font-size: 0.9rem;
+  }
+
+  .services-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services-container .service-card{
+    width: 90%;
+    padding: 0.3rem;
+  }
+
+  .about-services{
+    background-image: none;
   }
 }
 </style>

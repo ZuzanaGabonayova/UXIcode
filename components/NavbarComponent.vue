@@ -86,7 +86,7 @@
         </div>
 
         <!-- Fullscreen Menu -->
-        <div v-if="isMenuOpen" class="fullscreen-menu">
+        <div v-if="isMenuOpen || isClosing" class="fullscreen-menu" :class="{ 'closing': isClosing }">
 
           <div class="logo-container-fullscreen">
             <a href="/">
@@ -151,17 +151,27 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-    }
+      isClosing: false, // New state for smooth close animation
+    };
   },
   methods: {
     toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
+      if (this.isMenuOpen) {
+        this.closeMenu(); // Trigger close animation if menu is open
+      } else {
+        this.isMenuOpen = true;
+      }
     },
     closeMenu() {
-      this.isMenuOpen = false
+      this.isClosing = true;
+      setTimeout(() => {
+        this.isMenuOpen = false;
+        this.isClosing = false; // Reset closing state after animation ends
+      }, 500); // Duration matches the CSS animation duration
     },
   },
-}
+};
+
 </script>
 
 <style scoped>
@@ -375,12 +385,25 @@ export default {
   animation: slideIn 0.5s ease forwards;
 }
 
+.mobile .fullscreen-menu.closing {
+  animation: slideOut 0.5s ease forwards; /* Smooth close animation */
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(100%);
   }
   to {
     transform: translateX(0%);
+  }
+}
+/* Close Animation */
+@keyframes slideOut {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
 

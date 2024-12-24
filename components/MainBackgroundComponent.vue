@@ -72,7 +72,9 @@ export default {
   }
 
   .centered-heading {
-    font-size: 2.5rem; /* Adjust font size for smaller screens */
+    font-size: 5rem; 
+    margin-bottom: 0;
+    top: 60%;
   }
 }
 </style>

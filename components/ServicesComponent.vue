@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row gy-4">
         <!-- Service 1: UX/UI Design -->
-        <div class="col-12 col-sm-6 col-lg-4" @click="navigateToSection('uxuidesign')">
+        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('uxuidesign')">
           <nuxt-link :to="{ path: '/services', hash: '#uxuidesign' }" class="service-card">
             <img
               src="../assets/services/user-experience-white.png"
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Service 2: Web Development -->
-        <div class="col-12 col-sm-6 col-lg-4" @click="navigateToSection('webdev')">
+        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('webdev')">
           <nuxt-link :to="{ path: '/services', hash: '#webdev' }" class="service-card">
             <img
               src="../assets/services/software-developer-white.png"
@@ -27,7 +27,7 @@
         </div>
 
         <!-- Service 3: Branding -->
-        <div class="col-12 col-sm-6 col-lg-4" @click="navigateToSection('branding')">
+        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('branding')">
           <nuxt-link :to="{ path: '/services', hash: '#branding' }" class="service-card">
             <img
               src="../assets/services/light-bulb-white.png"
@@ -39,7 +39,7 @@
         </div>
 
         <!-- Service 4: SEO -->
-        <div class="col-12 col-sm-6 col-lg-4" @click="navigateToSection('seo')">
+        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('seo')">
           <nuxt-link :to="{ path: '/services', hash: '#seo' }" class="service-card">
             <img
               src="../assets/services/seo-icon-design-vector-white.png"
@@ -51,7 +51,7 @@
         </div>
 
         <!-- Service 5: Social Media -->
-        <div class="col-12 col-sm-6 col-lg-4" @click="navigateToSection('some')">
+        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('some')">
           <nuxt-link :to="{ path: '/services', hash: '#some' }" class="service-card">
             <img
               src="../assets/services/social-media-white.png"
@@ -63,7 +63,7 @@
         </div>
 
         <!-- Service 6: Photography -->
-        <div class="col-12 col-sm-6 col-lg-4" @click="navigateToSection('photo')">
+        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('photo')">
           <nuxt-link :to="{ path: '/services', hash: '#photo' }" class="service-card">
             <img
               src="../assets/services/photography-white.png"
@@ -177,5 +177,23 @@ export default {
   margin: 0;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px){
+  .service-card{
+    width: 90%;
+    height: 180px;
+  }
+
+  .service-div{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .services-section{
+    padding-bottom: 2rem!important;
+    padding-top: 2rem!important;
+  }
 }
 </style>

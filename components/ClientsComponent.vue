@@ -261,15 +261,36 @@ export default {
 
   .testimonial {
     font-size: 1.2rem;
+    margin-bottom: 15px;
   }
 
   .client-logo {
-    height: 60px;
+    height: 80px;
   }
 
   .carousel-indicators button {
     width: 30px;
     height: 3px;
+  }
+
+  .client-info{
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 1rem;
+  }
+
+  .client-info .client-company{
+    order: 1;
+    justify-content: center;
+    align-items: center;
+  }
+  .client-info .img{
+    order: 2;
+  }
+
+  .clients-section{
+    padding-bottom: 2rem!important;
+    padding-top: 2rem!important;
   }
 }
 </style>

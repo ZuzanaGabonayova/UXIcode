@@ -7,7 +7,7 @@
       <!-- Projects Grid -->
       <div class="row gy-4">
         <!-- Project 1 -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 project-layout">
           <div class="project-card codamore">
             <div class="project-info">
               <h4 class="project-title">Codamore</h4>
@@ -34,7 +34,7 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 project-layout">
           <div class="project-card rengoring">
             <div class="project-info">
               <h4 class="project-title">1811 Rengøring</h4>
@@ -204,5 +204,18 @@ export default {
 .arrow-icon {
   color: #baff44;
   font-weight: bold;
+}
+
+@media (max-width: 768px){
+  .project-card{
+    width: 90%;
+    height: 400px;
+  }
+
+  .project-layout{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
 }
 </style>
