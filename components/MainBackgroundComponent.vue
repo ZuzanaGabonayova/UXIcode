@@ -68,10 +68,11 @@ export default {
 
 @media (max-width: 990px) {
   .background-container {
-    height: 35vh;
+    height: 40vh;
   }
 
   .centered-heading {
+    width: 90%;
     font-size: 5rem; 
     margin-bottom: 0;
     top: 60%;

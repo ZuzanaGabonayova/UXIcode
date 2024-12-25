@@ -179,7 +179,7 @@ export default {
 /* Responsiveness */
 @media (max-width: 768px) {
   .carousel-inner {
-    height: 25vh;
+    height: 28vh;
   }
 
   .carousel-image {

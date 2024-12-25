@@ -87,7 +87,7 @@ export default {
       const element = document.getElementById(sectionId);
       if (element) {
         // Same-page navigation with 200px offset
-        const offsetTop = element.getBoundingClientRect().top + window.scrollY - 200;
+        const offsetTop = element.getBoundingClientRect().top + window.scrollY - 180;
         window.scrollTo({ top: offsetTop, behavior: "smooth" });
       } else {
         // Cross-page navigation
@@ -95,7 +95,7 @@ export default {
           // Handle scroll to ensure 200px gap after navigation
           const elementAfterNavigation = document.getElementById(sectionId);
           if (elementAfterNavigation) {
-            const adjustedOffsetTop = elementAfterNavigation.getBoundingClientRect().top + window.scrollY - 200;
+            const adjustedOffsetTop = elementAfterNavigation.getBoundingClientRect().top + window.scrollY - 180;
             window.scrollTo({ top: adjustedOffsetTop, behavior: "smooth" });
           }
         });

@@ -7,7 +7,8 @@
         <!-- Project 1 -->
         <div class="col-12 col-md-4 project-layout">
           <div
-            class="project-card nostalgie"
+            class="project-card nostalgie" 
+            onclick="location.href='/nostalgie'"
           >
             <div class="project-info">
               <h4 class="project-title">Nostalgie - Restaurant, Café</h4>
@@ -38,6 +39,7 @@
         <div class="col-12 col-md-4 project-layout">
           <div
             class="project-card sez"
+            onclick="location.href='/sezplaset'"
           >
             <div class="project-info">
               <h4 class="project-title">SEZ Plaset</h4>
@@ -68,6 +70,7 @@
         <div class="col-12 col-md-4 project-layout">
           <div
             class="project-card techhub"
+            onclick="location.href='/techhub'"
           >
             <div class="project-info">
               <h4 class="project-title">TechHub South</h4>
