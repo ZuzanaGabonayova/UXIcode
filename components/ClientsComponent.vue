@@ -256,7 +256,7 @@ export default {
 @media (max-width: 768px) {
   .carousel-container {
     width: 90%;
-    height: 60vh;
+    height: 65vh;
   }
 
   .testimonial {

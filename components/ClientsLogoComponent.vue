@@ -49,7 +49,7 @@ export default {
   padding-bottom: 2rem;
 }
 .clients-logos{
-  background-color: #A59132;
+  background-color: #aaaaaaaa;
 }
 /* Logo Carousel Container */
 .logo-carousel {

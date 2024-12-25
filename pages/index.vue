@@ -203,7 +203,7 @@ export default {
 }
 .services p {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   text-align: center;
   margin-bottom: 4rem;
 }
@@ -224,7 +224,7 @@ export default {
 }
 .projects p {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -312,7 +312,7 @@ export default {
     font-size: 5rem;
   }
   .services p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
   }
 
@@ -321,7 +321,7 @@ export default {
   }
   .projects p {
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .clients h1 {
