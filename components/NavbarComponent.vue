@@ -121,7 +121,7 @@
               />
             </div>
 
-            <div class="mobile-contact">
+            <div class="mobile-contact d-flex flex-column gap-3">
               <!-- Email -->
               <div class="d-flex align-items-center justify-content-center gap-2">
                   <i class="fa-regular fa-envelope"></i>

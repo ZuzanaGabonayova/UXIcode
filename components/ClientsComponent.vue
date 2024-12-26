@@ -1,7 +1,6 @@
 <template>
   <section class="clients-section py-5">
     <div class="container d-flex justify-content-center align-items-center">
-      <!-- Div Block with Consistent Background Color -->
       <div class="carousel-container position-relative">
         <!-- Carousel -->
         <div
@@ -12,91 +11,29 @@
         >
           <!-- Carousel Items -->
           <div class="carousel-inner">
-            <!-- First Slide -->
-            <div class="carousel-item active">
+            <div
+              v-for="(client, index) in clients"
+              :key="index"
+              class="carousel-item"
+              :class="{ active: index === 0 }"
+            >
               <div
                 class="client-block d-flex align-items-center justify-content-center"
               >
                 <div class="client-content text-center">
-                  <p class="testimonial">
-                    “UxiCode made for us entire branding, UI design of our
-                    website and we can only recommend them :).”
-                  </p>
+                  <p class="testimonial">“{{ client.testimonial }}”</p>
                   <div class="client-info d-flex align-items-center">
                     <div class="img">
                       <img
-                        src="../assets/clients/codamore.png"
-                        alt="Codamore Logo"
+                        :src="client.logo"
+                        :alt="client.logoAlt"
                         class="client-logo mb-3"
                       />
                     </div>
                     <div class="client-company">
-                      <p class="client-name">JUDr. Tomáš Jendrál</p>
-                      <p class="client-title">CEO of the company</p>
-                      <p class="client-company">CODAMORE s.r.o.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Second Slide -->
-            <div class="carousel-item">
-              <div
-                class="client-block d-flex align-items-center justify-content-center"
-              >
-                <div class="client-content text-center">
-                  <p class="testimonial">
-                    “Our digital presence was outdated. We found UxiCode company
-                    as the best choice for our new web design and development.
-                    Really good experience!”
-                  </p>
-                  <div class="client-info d-flex align-items-center">
-                    <div class="img">
-                      <img
-                        src="../assets/clients/sez_plaset.png"
-                        alt="SEZ Plaset Logo"
-                        class="client-logo mb-3"
-                      />
-                    </div>
-                    <div class="client-company">
-                      <p class="client-name">JUDr. Ján Gabonay</p>
-                      <p class="client-title">
-                        Director of production base development
-                      </p>
-                      <p class="client-company">SEZ Plaset s.r.o.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Third Slide -->
-            <div class="carousel-item">
-              <div
-                class="client-block d-flex align-items-center justify-content-center"
-              >
-                <div class="client-content text-center">
-                  <p class="testimonial">
-                    “UxiCode takes care of our whole digital presence,
-                    whether it is our website or social media. 
-                    I have also experienced their photoshooting services on our events.
-                    I am really satisfied with outcomes.”
-                  </p>
-                  <div class="client-info d-flex align-items-center">
-                    <div class="img">
-                      <img
-                        src="../assets/clients/nostalgie.png"
-                        alt="SEZ Plaset Logo"
-                        class="client-logo mb-3"
-                      />
-                    </div>
-                    <div class="client-company">
-                      <p class="client-name">Dana Říhová</p>
-                      <p class="client-title">
-                        Owner
-                      </p>
-                      <p class="client-company">Nostalgie - Restaurant, Café</p>
+                      <p class="client-name">{{ client.name }}</p>
+                      <p class="client-title">{{ client.title }}</p>
+                      <p class="client-company">{{ client.company }}</p>
                     </div>
                   </div>
                 </div>
@@ -107,24 +44,13 @@
           <!-- Custom Line Indicators -->
           <div class="carousel-indicators">
             <button
+              v-for="(client, index) in clients"
+              :key="index"
               type="button"
               data-bs-target="#clientsCarousel"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#clientsCarousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#clientsCarousel"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
+              :data-bs-slide-to="index"
+              :class="{ active: index === 0 }"
+              :aria-label="'Slide ' + (index + 1)"
             ></button>
           </div>
         </div>
@@ -136,8 +62,42 @@
 <script>
 export default {
   name: "ClientsComponent",
+  data() {
+    return {
+      clients: [
+        {
+          testimonial:
+            "UxiCode made for us entire branding, UI design of our website and we can only recommend them :).",
+          name: "JUDr. Tomáš Jendrál",
+          title: "CEO of the company",
+          company: "CODAMORE s.r.o.",
+          logo: require("../assets/clients/codamore.png"),
+          logoAlt: "Codamore Logo",
+        },
+        {
+          testimonial:
+            "Our digital presence was outdated. We found UxiCode company as the best choice for our new web design and development. Really good experience!",
+          name: "JUDr. Ján Gabonay",
+          title: "Director of production base development",
+          company: "SEZ Plaset s.r.o.",
+          logo: require("../assets/clients/sez_plaset.png"),
+          logoAlt: "SEZ Plaset Logo",
+        },
+        {
+          testimonial:
+            "UxiCode takes care of our whole digital presence, whether it is our website or social media. I have also experienced their photoshooting services on our events. I am really satisfied with outcomes.",
+          name: "Dana Říhová",
+          title: "Owner",
+          company: "Nostalgie - Restaurant, Café",
+          logo: require("../assets/clients/nostalgie.png"),
+          logoAlt: "Nostalgie Logo",
+        },
+      ],
+    };
+  },
 };
 </script>
+
 
 <style scoped>
 /* Section Styling */

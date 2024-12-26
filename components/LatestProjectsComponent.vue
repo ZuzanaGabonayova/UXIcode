@@ -1,93 +1,30 @@
 <template>
   <section class="projects-section py-5">
     <div class="container">
-
       <!-- Projects Grid -->
       <div class="row gy-4">
-        <!-- Project 1 -->
-        <div class="col-12 col-md-4 project-layout">
+        <div
+          v-for="(project, index) in projects"
+          :key="index"
+          class="col-12 col-md-4 project-layout"
+        >
           <div
-            class="project-card nostalgie" 
-            onclick="location.href='/nostalgie'"
+            :class="['project-card', project.cardClass]"
+            @click="navigateTo(project.link)"
           >
             <div class="project-info">
-              <h4 class="project-title">Nostalgie - Restaurant, Café</h4>
-              <p class="project-description">
-                Completely new website design for well-known restaurant in
-                eastern Slovakia.
-              </p>
+              <h4 class="project-title">{{ project.title }}</h4>
+              <p class="project-description">{{ project.description }}</p>
             </div>
             <div class="image-container">
               <img
-                src="../assets/projects/nostalgie-mockup.png"
-                alt="Nostalgie Mockup"
+                :src="project.image"
+                :alt="project.imageAlt"
                 class="project-image"
               />
             </div>
             <div class="project-view-container">
-              <a href="/nostalgie" class="project-view">
-                VIEW
-                <div class="arrow-circle">
-                  <span class="arrow-icon">➜</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="col-12 col-md-4 project-layout">
-          <div
-            class="project-card sez"
-            onclick="location.href='/sezplaset'"
-          >
-            <div class="project-info">
-              <h4 class="project-title">SEZ Plaset</h4>
-              <p class="project-description">
-                Website design and web development for company focused on
-                plastic manufacturing.
-              </p>
-            </div>
-            <div class="image-container">
-              <img
-                src="../assets/projects/sez-plaset-mockup.png"
-                alt="SEZ Plaset Mockup"
-                class="project-image"
-              />
-            </div>
-            <div class="project-view-container">
-              <a href="/sezplaset" class="project-view">
-                VIEW
-                <div class="arrow-circle">
-                  <span class="arrow-icon">➜</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="col-12 col-md-4 project-layout">
-          <div
-            class="project-card techhub"
-            onclick="location.href='/techhub'"
-          >
-            <div class="project-info">
-              <h4 class="project-title">TechHub South</h4>
-              <p class="project-description">
-                Rebranding for startup company TechHub South, to bring the best
-                possible branding ideas.
-              </p>
-            </div>
-            <div class="image-container">
-              <img
-                src="../assets/projects/techhubsouth-mockup.png"
-                alt="TechHub South Mockup"
-                class="project-image"
-              />
-            </div>
-            <div class="project-view-container">
-              <a href="/techhubsouth" class="project-view">
+              <a :href="project.link" class="project-view">
                 VIEW
                 <div class="arrow-circle">
                   <span class="arrow-icon">➜</span>
@@ -97,16 +34,54 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'LatestProjectsComponent',
-}
+  name: "LatestProjectsComponent",
+  data() {
+    return {
+      projects: [
+        {
+          title: "Nostalgie - Restaurant, Café",
+          description:
+            "Completely new website design for well-known restaurant in eastern Slovakia.",
+          image: require("../assets/projects/nostalgie-mockup.png"),
+          imageAlt: "Nostalgie Mockup",
+          link: "/nostalgie",
+          cardClass: "nostalgie",
+        },
+        {
+          title: "SEZ Plaset",
+          description:
+            "Website design and web development for company focused on plastic manufacturing.",
+          image: require("../assets/projects/sez-plaset-mockup.png"),
+          imageAlt: "SEZ Plaset Mockup",
+          link: "/sezplaset",
+          cardClass: "sez",
+        },
+        {
+          title: "TechHub South",
+          description:
+            "Rebranding for startup company TechHub South, to bring the best possible branding ideas.",
+          image: require("../assets/projects/techhubsouth-mockup.png"),
+          imageAlt: "TechHub South Mockup",
+          link: "/techhubsouth",
+          cardClass: "techhub",
+        },
+      ],
+    };
+  },
+  methods: {
+    navigateTo(link) {
+      this.$router.push(link);
+    },
+  },
+};
 </script>
+
 
 <style scoped>
 /* Section Background */

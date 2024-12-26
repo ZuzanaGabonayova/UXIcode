@@ -2,75 +2,19 @@
   <section class="services-section py-5">
     <div class="container">
       <div class="row gy-4">
-        <!-- Service 1: UX/UI Design -->
-        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('uxuidesign')">
-          <nuxt-link :to="{ path: '/services', hash: '#uxuidesign' }" class="service-card">
+        <div
+          v-for="(service, index) in services"
+          :key="index"
+          class="col-12 col-sm-6 col-lg-4 service-div"
+          @click="navigateToSection(service.id)"
+        >
+          <nuxt-link :to="{ path: '/services', hash: `#${service.id}` }" class="service-card">
             <img
-              src="../assets/services/user-experience-white.png"
-              alt="UX/UI Design"
+              :src="service.icon"
+              :alt="service.title"
               class="service-icon"
             />
-            <h4 class="service-title">UX/UI Design</h4>
-          </nuxt-link>
-        </div>
-
-        <!-- Service 2: Web Development -->
-        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('webdev')">
-          <nuxt-link :to="{ path: '/services', hash: '#webdev' }" class="service-card">
-            <img
-              src="../assets/services/software-developer-white.png"
-              alt="Web Development"
-              class="service-icon"
-            />
-            <h4 class="service-title">Web Development</h4>
-          </nuxt-link>
-        </div>
-
-        <!-- Service 3: Branding -->
-        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('branding')">
-          <nuxt-link :to="{ path: '/services', hash: '#branding' }" class="service-card">
-            <img
-              src="../assets/services/light-bulb-white.png"
-              alt="Branding"
-              class="service-icon"
-            />
-            <h4 class="service-title">Branding</h4>
-          </nuxt-link>
-        </div>
-
-        <!-- Service 4: SEO -->
-        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('seo')">
-          <nuxt-link :to="{ path: '/services', hash: '#seo' }" class="service-card">
-            <img
-              src="../assets/services/seo-icon-design-vector-white.png"
-              alt="SEO"
-              class="service-icon"
-            />
-            <h4 class="service-title">SEO - Search Engine Optimization</h4>
-          </nuxt-link>
-        </div>
-
-        <!-- Service 5: Social Media -->
-        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('some')">
-          <nuxt-link :to="{ path: '/services', hash: '#some' }" class="service-card">
-            <img
-              src="../assets/services/social-media-white.png"
-              alt="Social Media"
-              class="service-icon"
-            />
-            <h4 class="service-title">SOME - Social Media Marketing</h4>
-          </nuxt-link>
-        </div>
-
-        <!-- Service 6: Photography -->
-        <div class="col-12 col-sm-6 col-lg-4 service-div" @click="navigateToSection('photo')">
-          <nuxt-link :to="{ path: '/services', hash: '#photo' }" class="service-card">
-            <img
-              src="../assets/services/photography-white.png"
-              alt="Photography"
-              class="service-icon"
-            />
-            <h4 class="service-title">Photography and Videography</h4>
+            <h4 class="service-title">{{ service.title }}</h4>
           </nuxt-link>
         </div>
       </div>
@@ -79,9 +23,46 @@
 </template>
 
 
+
 <script>
 export default {
   name: "ServicesComponent",
+  data() {
+    return {
+      services: [
+        {
+          id: "uxuidesign",
+          title: "UX/UI Design",
+          icon: require("../assets/services/user-experience-white.png"),
+        },
+        {
+          id: "webdev",
+          title: "Web Development",
+          icon: require("../assets/services/software-developer-white.png"),
+        },
+        {
+          id: "branding",
+          title: "Branding",
+          icon: require("../assets/services/light-bulb-white.png"),
+        },
+        {
+          id: "seo",
+          title: "SEO - Search Engine Optimization",
+          icon: require("../assets/services/seo-icon-design-vector-white.png"),
+        },
+        {
+          id: "some",
+          title: "SOME - Social Media Marketing",
+          icon: require("../assets/services/social-media-white.png"),
+        },
+        {
+          id: "photo",
+          title: "Photography and Videography",
+          icon: require("../assets/services/photography-white.png"),
+        },
+      ],
+    };
+  },
   methods: {
     navigateToSection(sectionId) {
       const element = document.getElementById(sectionId);
@@ -92,10 +73,10 @@ export default {
       } else {
         // Cross-page navigation
         this.$router.push({ path: "/services", hash: `#${sectionId}` }).then(() => {
-          // Handle scroll to ensure 200px gap after navigation
           const elementAfterNavigation = document.getElementById(sectionId);
           if (elementAfterNavigation) {
-            const adjustedOffsetTop = elementAfterNavigation.getBoundingClientRect().top + window.scrollY - 180;
+            const adjustedOffsetTop =
+              elementAfterNavigation.getBoundingClientRect().top + window.scrollY - 180;
             window.scrollTo({ top: adjustedOffsetTop, behavior: "smooth" });
           }
         });

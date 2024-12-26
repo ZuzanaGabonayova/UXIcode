@@ -1,32 +1,32 @@
 <template>
   <section class="projects-section py-5">
-
     <LatestProjectsComponent />
 
     <div class="container">
       <!-- Projects Grid -->
       <div class="row gy-4">
-        <!-- Project 1 -->
-        <div class="col-12 col-md-4 project-layout">
-          <div 
-          class="project-card codamore"
-          onclick="location.href='/codamore'"
+        <div
+          v-for="(project, index) in projects"
+          :key="index"
+          class="col-12 col-md-4 project-layout"
+        >
+          <div
+            :class="['project-card', project.cardClass]"
+            @click="navigateTo(project.link)"
           >
             <div class="project-info">
-              <h4 class="project-title">Codamore</h4>
-              <p class="project-description">
-                Photoshooting and capturing videos for Social Media from conference.
-              </p>
+              <h4 class="project-title">{{ project.title }}</h4>
+              <p class="project-description">{{ project.description }}</p>
             </div>
             <div class="image-container">
               <img
-                src="../assets/projects/codamore-mockup.png"
-                alt="codamore Mockup"
+                :src="project.image"
+                :alt="project.imageAlt"
                 class="project-image"
               />
             </div>
             <div class="project-view-container">
-              <a href="/codamore" class="project-view">
+              <a :href="project.link" class="project-view">
                 VIEW
                 <div class="arrow-circle">
                   <span class="arrow-icon">➜</span>
@@ -35,38 +35,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 2 -->
-        <div class="col-12 col-md-4 project-layout">
-          <div 
-          class="project-card rengoring"
-          onclick="location.href='/1811rengoring'"
-          >
-            <div class="project-info">
-              <h4 class="project-title">1811 Rengøring</h4>
-              <p class="project-description">
-                Maintenance of website, website marketing and creation of advertisement materials.
-              </p>
-            </div>
-            <div class="image-container">
-              <img
-                src="../assets/projects/1811rengoring-mockup.png"
-                alt="1811 rengoring Mockup"
-                class="project-image"
-              />
-            </div>
-            <div class="project-view-container">
-              <a href="/1811rengoring" class="project-view">
-                VIEW
-                <div class="arrow-circle">
-                  <span class="arrow-icon">➜</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        
       </div>
     </div>
   </section>
@@ -78,10 +46,40 @@ import LatestProjectsComponent from './LatestProjectsComponent.vue';
 export default {
   name: 'ProjectsComponent',
   components: {
-    LatestProjectsComponent
-  }
-}
+    LatestProjectsComponent,
+  },
+  data() {
+    return {
+      projects: [
+        {
+          title: 'Codamore',
+          description:
+            'Photoshooting and capturing videos for Social Media from conference.',
+          image: require('../assets/projects/codamore-mockup.png'),
+          imageAlt: 'Codamore Mockup',
+          link: '/codamore',
+          cardClass: 'codamore',
+        },
+        {
+          title: '1811 Rengøring',
+          description:
+            'Maintenance of website, website marketing and creation of advertisement materials.',
+          image: require('../assets/projects/1811rengoring-mockup.png'),
+          imageAlt: '1811 Rengøring Mockup',
+          link: '/1811rengoring',
+          cardClass: 'rengoring',
+        },
+      ],
+    };
+  },
+  methods: {
+    navigateTo(link) {
+      this.$router.push(link);
+    },
+  },
+};
 </script>
+
 
 <style scoped>
 /* Section Background */

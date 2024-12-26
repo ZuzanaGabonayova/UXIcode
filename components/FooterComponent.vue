@@ -19,7 +19,10 @@
             <!-- Phone -->
             <div class="d-flex align-items-center contact-info">
                 <i class="fa-solid fa-phone"></i>
-              <span>+421 950 797 735</span>
+                <a href="tel:+421950797735" class="contact-phone" >
+                  <span>+421 950 797 735</span>
+                </a>
+              
             </div>
           </div>
         </div>
@@ -33,7 +36,7 @@
             <a href="#" class="social-link">
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="#" class="social-link">
+            <a href="https://www.instagram.com/uxicode.studio/" class="social-link">
               <i class="fab fa-instagram"></i>
             </a>
             <a href="#" class="social-link">
@@ -106,7 +109,10 @@ export default {
   text-decoration: none;
   font-style: italic;
 }
-
+.contact-phone{
+  text-decoration: none;
+  color: #fff;
+}
 .contact-link:hover {
   text-decoration: underline;
 }

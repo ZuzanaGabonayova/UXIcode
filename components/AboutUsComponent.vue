@@ -4,32 +4,15 @@
       <!-- Who Are We Section -->
       <div class="row align-items-center mb-5 whoarewe">
         <div class="col-lg-6 col-md-12 whoarewe-text">
-          <h1 class="section-title">Who are we?</h1>
-          <p class="section-text">
-            At our company, we are passionate about delivering top-notch IT and
-            digital solutions tailored to meet the unique needs of businesses.
-            From web development and UX/UI design to branding, SEO, and social
-            media marketing, we combine creativity, innovation, and modern
-            technologies to help our clients achieve their goals.
-          </p>
-          <p class="section-text">
-            Our team of dedicated professionals focuses on providing solutions
-            that are not only visually stunning but also functional,
-            user-friendly, and results-driven. Whether you’re a startup looking
-            to build your brand or an established company aiming to grow your
-            online presence, we’re here to bring your vision to life.
-          </p>
-          <p class="section-text">
-            Driven by a commitment to quality and customer satisfaction, we take
-            pride in turning challenges into opportunities. Let us help you tell
-            your story, reach new heights, and achieve success in the digital
-            world.
-          </p>
+          <h1 class="section-title">{{ aboutUs.title }}</h1>
+          <div v-for="(paragraph, index) in aboutUs.paragraphs" :key="index">
+            <p class="section-text">{{ paragraph }}</p>
+          </div>
         </div>
         <div class="col-lg-6 col-md-12 text-center whoarewe-img">
           <img
-            src="../assets/aboutus/office.jpg"
-            alt="Office Image"
+            :src="aboutUs.image"
+            :alt="aboutUs.imageAlt"
             class="img-fluid rounded shadow"
           />
         </div>
@@ -37,108 +20,42 @@
 
       <!-- Mission, Vision, Values Section -->
       <div class="row text-center mission-vision-values">
-        <!-- Mission -->
         <div
-          class="col-lg-4 col-md-6 d-flex flex-column align-items-center mb-4 mission"
+          v-for="(item, index) in missionVisionValues"
+          :key="index"
+          class="col-lg-4 col-md-6 d-flex flex-column align-items-center mb-4"
+          :class="item.class"
         >
-          <div
-            class="icon-box d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../assets/aboutus/mission-g.png"
-              alt="Mission Icon"
-              class="icon img-fluid"
-            />
+          <div class="icon-box d-flex justify-content-center align-items-center">
+            <img :src="item.icon" :alt="item.title" class="icon img-fluid" />
           </div>
-          <h3 class="mv-title">Mission</h3>
-          <p class="mv-text">
-            To provide innovative IT solutions tailored to our clients’ needs,
-            delivering exceptional results in web development, branding, and
-            digital services. We aim to empower businesses with creative,
-            functional, and modern solutions that drive growth and success.
-          </p>
-        </div>
-        <!-- Vision -->
-        <div
-          class="col-lg-4 col-md-6 d-flex flex-column align-items-center mb-4 vision"
-        >
-          <div
-            class="icon-box d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../assets/aboutus/vision-g.png"
-              alt="Vision Icon"
-              class="icon img-fluid"
-            />
-          </div>
-          <h3 class="mv-title">Vision</h3>
-          <p class="mv-text">
-            To become a leading provider of IT and digital services, known for
-            delivering cutting-edge solutions that help businesses thrive. We
-            envision building long-term partnerships by consistently exceeding
-            expectations and staying ahead in innovation.
-          </p>
-        </div>
-        <!-- Values -->
-        <div
-          class="col-lg-4 col-md-12 d-flex flex-column align-items-center mb-4 values"
-        >
-          <div
-            class="icon-box d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../assets/aboutus/values-g.png"
-              alt="Values Icon"
-              class="icon img-fluid"
-            />
-          </div>
-          <h3 class="mv-title">Values</h3>
-          <p class="mv-text">
-            <strong>Customer Focus</strong> – Prioritizing clients’ needs to
-            deliver meaningful and impactful results.<br />
-            <strong>Innovation</strong> – Leveraging creativity and modern
-            technologies to bring the best solutions.<br />
-            <strong>Integrity</strong> – Building trust through transparency,
-            honesty, and quality in all we do.
-          </p>
+          <h3 class="mv-title">{{ item.title }}</h3>
+          <p class="mv-text"  >{{ item.text }}</p>
         </div>
       </div>
 
       <!-- Our Team Section -->
       <div class="row text-center our-team mt-5">
         <div class="col-12">
-          <h1 class="team-title">Our team</h1>
+          <h1 class="team-title">{{ team.title }}</h1>
         </div>
-        <!-- Team Member 1 -->
-        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-end zuzana-div">
-          <div class="team-member zuzana">
-            <a href="https://www.linkedin.com/in/zuzanagabonayova/">
-                <img
-                src="../assets/aboutus/zuzana.jpg"
-                alt="Zuzana Gabonayová"
-                class="team-photo"
-                />
+        <div
+          v-for="(member, index) in team.members"
+          :key="index"
+          class="col-lg-6 col-md-6 d-flex flex-column "
+          :class="member.class"
+        >
+          <div 
+          class="team-member"
+          :class="member.classdiv"
+          >
+            <a :href="member.linkedIn">
+              <img :src="member.photo" :alt="member.name" class="team-photo" />
             </a>
-            <a href="https://www.linkedin.com/in/zuzanagabonayova/">
-                <h4 class="team-name">Zuzana Gabonayová</h4>
+            <a :href="member.linkedIn">
+              <h4 class="team-name">{{ member.name }}</h4>
             </a>
-            <p class="team-role">CEO, Web Developer</p>
-          </div>
-        </div>
-        <!-- Team Member 2 -->
-        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-start katarina-div">
-          <div class="team-member katarina">
-            <a href="https://www.linkedin.com/in/katarinahudakova/">
-            <img
-              src="../assets/aboutus/katarina.jpg"
-              alt="Katarína Hudáková"
-              class="team-photo"
-            />
-            </a>
-            <a href="https://www.linkedin.com/in/katarinahudakova/">
-                <h4 class="team-name">Katarína Hudáková</h4>
-            </a>
-            <p class="team-role">CEO, Team Leader</p>
+            <p class="team-role">{{ member.role }}</p>
           </div>
         </div>
       </div>
@@ -146,11 +63,90 @@
   </section>
 </template>
 
+
 <script>
 export default {
   name: 'AboutUsComponent',
-}
+  data() {
+    return {
+      aboutUs: {
+        title: 'Who are we?',
+        paragraphs: [
+          `At our company, we are passionate about delivering top-notch IT and
+          digital solutions tailored to meet the unique needs of businesses.
+          From web development and UX/UI design to branding, SEO, and social
+          media marketing, we combine creativity, innovation, and modern
+          technologies to help our clients achieve their goals.`,
+          `Our team of dedicated professionals focuses on providing solutions
+          that are not only visually stunning but also functional,
+          user-friendly, and results-driven. Whether you’re a startup looking
+          to build your brand or an established company aiming to grow your
+          online presence, we’re here to bring your vision to life.`,
+          `Driven by a commitment to quality and customer satisfaction, we take
+          pride in turning challenges into opportunities. Let us help you tell
+          your story, reach new heights, and achieve success in the digital
+          world.`,
+        ],
+        image: require('../assets/aboutus/office.jpg'),
+        imageAlt: 'Office Image',
+      },
+      missionVisionValues: [
+        {
+          title: 'Mission',
+          text: `To provide innovative IT solutions tailored to our clients’ needs,
+          delivering exceptional results in web development, branding, and
+          digital services. We aim to empower businesses with creative,
+          functional, and modern solutions that drive growth and success.`,
+          icon: require('../assets/aboutus/mission-g.png'),
+          class: 'mission',
+        },
+        {
+          title: 'Vision',
+          text: `To become a leading provider of IT and digital services, known for
+          delivering cutting-edge solutions that help businesses thrive. We
+          envision building long-term partnerships by consistently exceeding
+          expectations and staying ahead in innovation.`,
+          icon: require('../assets/aboutus/vision-g.png'),
+          class: 'vision',
+        },
+        {
+          title: 'Values',
+          text: `Customer Focus – Prioritizing clients’ needs to
+          deliver meaningful and impactful results.<br />
+          Innovation – Leveraging creativity and modern
+          technologies to bring the best solutions.<br />
+          Integrity – Building trust through transparency,
+          honesty, and quality in all we do.`,
+          icon: require('../assets/aboutus/values-g.png'),
+          class: 'values',
+        },
+      ],
+      team: {
+        title: 'Our team',
+        members: [
+          {
+            name: 'Zuzana Gabonayová',
+            role: 'CEO, Web Developer',
+            photo: require('../assets/aboutus/zuzana.jpg'),
+            linkedIn: 'https://www.linkedin.com/in/zuzanagabonayova/',
+            class: 'zuzana-div',
+            classdiv: 'zuzana',
+          },
+          {
+            name: 'Katarína Hudáková',
+            role: 'CEO, Team Leader',
+            photo: require('../assets/aboutus/katarina.jpg'),
+            linkedIn: 'https://www.linkedin.com/in/katarinahudakova/',
+            class: 'katarina-div',
+            classdiv: 'katarina',
+          },
+        ],
+      },
+    };
+  },
+};
 </script>
+
 
 <style scoped>
 .about-us {
@@ -273,6 +269,13 @@ export default {
 }
 .team-member a{
     text-decoration: none;
+}
+
+.zuzana-div{
+  align-items: flex-end;
+}
+.katarina-div{
+  align-items: flex-start;
 }
 
 @media (max-width: 768px){
