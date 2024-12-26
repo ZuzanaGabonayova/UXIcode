@@ -151,6 +151,7 @@ export default {
   font-size: 1.3rem;
   line-height: 1.8;
   color: #fff;
+  text-align: left;
 }
 
 /* Technology Used Section */
@@ -196,8 +197,8 @@ export default {
     padding: 0px!important;
   }
 
-  .project-specific-content p{
-    text-align: left!important;
+  .content-text{
+    font-size: 1.2rem;
   }
 }
 </style>

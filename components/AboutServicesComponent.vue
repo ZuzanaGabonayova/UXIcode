@@ -261,7 +261,7 @@ export default {
   }
 
   .service-description {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 
   .services-container{
