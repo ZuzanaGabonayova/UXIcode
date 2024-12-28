@@ -46,7 +46,7 @@
 
           <!-- Right Side -->
           <div class="d-flex align-items-center">
-            <a href="#contact" class="btn btn-dark contact-btn">
+            <a href="/#contactform" class="btn btn-dark contact-btn">
                 <div class="arrow-circle">
                     <span class="arrow-icon">➜</span>
                 </div>
@@ -99,7 +99,7 @@
             <li @click="closeMenu"><a href="/projects">PROJECTS</a></li>
             <li @click="closeMenu"><a href="/about">ABOUT US</a></li>
             <li @click="closeMenu">
-              <a href="#contact" class="btn btn-dark contact-btn">
+              <a href="/#contactform" class="btn btn-dark contact-btn">
                   <div class="arrow-circle">
                       <span class="arrow-icon">➜</span>
                   </div>

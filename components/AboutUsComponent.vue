@@ -49,10 +49,10 @@
           class="team-member"
           :class="member.classdiv"
           >
-            <a :href="member.linkedIn">
+            <a :href="member.linkedIn" target="_blank">
               <img :src="member.photo" :alt="member.name" class="team-photo" />
             </a>
-            <a :href="member.linkedIn">
+            <a :href="member.linkedIn" target="_blank">
               <h4 class="team-name">{{ member.name }}</h4>
             </a>
             <p class="team-role">{{ member.role }}</p>

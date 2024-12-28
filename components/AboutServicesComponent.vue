@@ -51,7 +51,7 @@
         <div
           class="col-12 col-md-12 d-flex justify-content-center align-items-center"
         >
-          <a href="#" class="btn getintouch">
+          <a href="/#contactform" class="btn getintouch">
             Get in touch with us
             <div class="arrow-circle">
               <span class="arrow-icon">➜</span>
