@@ -112,9 +112,9 @@ export default {
         {
           title: 'Values',
           text: `Customer Focus – Prioritizing clients’ needs to
-          deliver meaningful and impactful results.<br />
+          deliver meaningful and impactful results.
           Innovation – Leveraging creativity and modern
-          technologies to bring the best solutions.<br />
+          technologies to bring the best solutions.
           Integrity – Building trust through transparency,
           honesty, and quality in all we do.`,
           icon: require('../assets/aboutus/values-g.png'),
