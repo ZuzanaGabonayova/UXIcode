@@ -82,6 +82,26 @@
     <ClientsComponent />
 
     <ClientsLogoComponent />
+
+    <div class="row contact">
+      <div
+        class="col-12 col-md-12 d-flex justify-content-center align-items-center v-100"
+      >
+        <h1>Contact us</h1>
+      </div>
+    </div>
+    <div class="row contact">
+      <div
+        class="col-12 col-md-12 d-flex align-items-center justify-content-center"
+      >
+        <p>
+          Do you have a <span style="color:#BAFF44">project</span> in mind you would like to talk about with us or are you a <span style="color:#BAFF44">freelancer</span>?
+        </p>
+      </div>
+    </div>
+
+    <ContactFormComponent />
+
   </div>
 </template>
 
@@ -90,6 +110,7 @@ import ServicesComponent from '../components/ServicesComponent.vue'
 import LatestProjectsComponent from '../components/LatestProjectsComponent.vue'
 import ClientsComponent from '../components/ClientsComponent.vue'
 import ClientsLogoComponent from '../components/ClientsLogoComponent.vue'
+import ContactFormComponent from '../components/ContactFormComponent.vue'
 
 export default {
   name: 'IndexPage',
@@ -98,6 +119,7 @@ export default {
     LatestProjectsComponent,
     ClientsComponent,
     ClientsLogoComponent,
+    ContactFormComponent,
   },
 }
 </script>
@@ -208,13 +230,15 @@ export default {
   margin-bottom: 4rem;
 }
 
-.projects {
+.projects,
+.contact {
   background-color: #000;
   margin: 0;
   padding: 0;
 }
-.projects h1 {
-  text-align: right;
+.projects h1,
+.contact h1 {
+  text-align: center;
   margin-top: 1rem;
   margin-right: 0rem;
   color: #5d8022;
@@ -222,7 +246,8 @@ export default {
   font-weight: 900;
   font-family: 'Merriweather', serif;
 }
-.projects p {
+.projects p,
+.contact p {
   color: #fff;
   font-size: 2.1rem;
   text-align: center;
@@ -316,10 +341,12 @@ export default {
     margin-bottom: 2rem;
   }
 
-  .projects h1{
+  .projects h1,
+  .contact h1{
     font-size: 5rem;
   }
-  .projects p {
+  .projects p,
+  .contact p {
     margin-top: 1rem;
     font-size: 1.2rem;
   }
