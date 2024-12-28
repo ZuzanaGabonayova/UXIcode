@@ -44,7 +44,7 @@ export default {
     '@nuxtjs/axios',
   ],
   axios: {
-    baseURL: 'https://uxicode.onrender.com/', // backend URL https://uxicode.onrender.com/ or http://localhost:5000
+    baseURL: 'https://uxicode.onrender.com', // backend URL https://uxicode.onrender.com/ or http://localhost:5000
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
