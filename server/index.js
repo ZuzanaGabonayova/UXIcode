@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from frontend
+  origin: ['https://uxicode.com', 'http://localhost:3000'], // Allow requests from frontend https://uxicode.com/ or http://localhost:3000
   methods: 'GET,POST,DELETE', // Specify allowed methods
 }));
 app.use(bodyParser.json())
@@ -34,5 +34,7 @@ app.use('/api/admin', adminRoutes);
 
 // Start Server
 app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`)
+  console.log(`Server running on port ${PORT}`)
 )
+
+module.exports = app
