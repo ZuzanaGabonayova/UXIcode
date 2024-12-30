@@ -71,7 +71,6 @@ export default {
 </script>
 
 <style scoped>
-/* Styling remains the same as provided */
 .gallery-component {
   background-color: #000;
   color: #baff44;

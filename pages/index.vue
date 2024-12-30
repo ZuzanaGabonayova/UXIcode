@@ -9,8 +9,7 @@
             <!-- Text Content -->
             <div class="col-12 col-md-8 all_content">
               <p class="description">
-                The combined freelance practices of Mat Lowe and Alex Hillel.
-                <br />Working with clients across arts, culture and technology.
+                Transforming ideas into impactful digital experiences through innovative design, seamless development, and strategic branding.
               </p>
               <a href="/projects" class="btn btn-green"> See our work </a>
               <h1 class="main-heading">UxiCode</h1>
@@ -125,7 +124,7 @@ export default {
 </script>
 
 <style scoped>
-/* Import Merriweather Font for "UxiCode" */
+/* Import Merriweather Font */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
 
 /* First View Section */

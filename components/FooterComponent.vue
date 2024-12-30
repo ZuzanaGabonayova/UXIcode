@@ -90,7 +90,7 @@ export default {
 .footer-line {
   width: 95%;
   height: 1px;
-  background-color: #baff44; /* Bright green line */
+  background-color: #baff44;
   margin: 0 auto;
 }
 

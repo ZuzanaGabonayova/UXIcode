@@ -29,7 +29,7 @@ export default {
 .background-container {
   position: relative;
   width: 100%; /* Ensure it fits within the viewport */
-  height: 80vh; /* Adjust height as needed */
+  height: 80vh; 
   margin: 0;
   padding: 0;
 

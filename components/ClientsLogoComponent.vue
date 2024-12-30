@@ -62,15 +62,15 @@ export default {
   display: flex;
   width: calc(
     (250px + 40px) * 16
-  ); /* 7 logos * 2 sets, with 20px gap between logos */
-  animation: scroll 40s linear infinite; /* Adjust the time for speed */
+  ); 
+  animation: scroll 40s linear infinite; 
 }
 
 .logo-slide {
   flex-shrink: 0;
   width: 250px;
   height: 100px;
-  margin: 0 20px; /* Adding 20px margin on left and right for a gap of 40px total */
+  margin: 0 20px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +92,7 @@ export default {
   100% {
     transform: translateX(
       -50%
-    ); /* Move by half the track's width for a seamless loop */
+    ); 
   }
 }
 
@@ -100,7 +100,7 @@ export default {
   .logo-track {
     width: calc(
       (125px + 40px) * 16
-    ); /* 7 logos * 2 sets, with 20px gap between logos */
+    ); 
   }
 
   .logo-slide {
